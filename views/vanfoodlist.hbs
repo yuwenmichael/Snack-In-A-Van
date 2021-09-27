@@ -1,0 +1,12 @@
+<section id="foodList">
+    <ul>
+        {{#each foods}}
+        <li>
+            <img class="browsePage" src="https://source.unsplash.com/{{this.photo}}">
+            <p>{{this.name}}: ${{this.price}}</p>
+        </li>
+
+        {{/each}}
+        
+    </ul>
+</section>

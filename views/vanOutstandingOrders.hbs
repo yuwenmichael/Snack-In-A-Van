@@ -1,0 +1,52 @@
+<section id="orderList">
+
+    <h1>Outstanding Orders</h1>
+    <script>
+    
+    function update(status, orderId){
+        if(status === "Outstanding"){
+            return Order.updateOne({ _id:  orderId}, { status: "Fulfilled" }).lean()
+        } 
+        return Order.updateOne({ _id:  orderId}, { status: "Fulfilled" }).lean()
+
+    }
+    </script> 
+
+    <ul>
+        {{#each outstandingOrders}}
+        {{#if this.visibility}}
+        <li>
+            <table>
+                <tr><td>Order ID: </td><td style="color:#8a775e;">{{this._id}}</td></tr>
+                <tr><td>Customer ID: </td><td  style="color:#8a775e;">{{this.customerId}}</td></tr>
+                <tr><td>Order time: </td><td  style="color:#8a775e;">{{this.time}}</td></tr>
+                <tr><td>Items: </td>
+                <td><table style="border: 3px solid #8a775e; width:85%;" align = "left">
+                    <tr style='background:rgba(214, 200, 182, 0.2);'><td>Name</td><td>Quantity</td></tr>
+                    {{#each foodnames}}
+                    <tr>
+                        <td  style="color:#8a775e;">{{this.foodname}} </td><td  style="color:#8a775e;">{{this.quantity}}</td>
+                    </tr>
+                    {{/each}}
+                </table></td>
+                </tr>
+                <tr><td>Total Price: </td><td  style="color:#8a775e;">${{this.total}}</td></tr>
+                <tr><td>Status: </td><td  style="color:#8a775e;">{{this.status}}</td></tr>
+                
+                <tr>
+                    <td colspan="2">
+                        <form method="post" action="/vendor/orders/outstanding/{{this._id}}/updateOrderStatus">
+                            <input type="hidden" name = "_id" value="{{this._id}}">
+                            <button type="submit"  class="register-btn" style="padding: 1%;" onclick="return update('{{this.status}}', '{{this._id}}');">
+                            Complete
+                            </button>
+                        </form>
+                    </td> 
+                </tr>
+                       
+            </table> 
+        </li>
+        {{/if}}
+        {{/each}}
+    </ul>
+</section>

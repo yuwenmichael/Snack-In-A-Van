@@ -1,0 +1,45 @@
+<section id="vanDetials">
+
+    <h1> vendor Details </h1>
+
+    <script>
+    
+    function update(status){
+        
+        if(status === "close"){
+            return Van.updateOne({ vanId: req.session.van_name }, { status: "open" }).lean()
+        } else {
+            return Van.updateOne({ vanId: req.session.van_name }, { status: "close" }).lean()
+        }
+
+    }
+    </script> 
+    <section id = "register-page">
+        <ul style="list-style-type:none">
+            <li>
+                <center><h3 style='display: inline;'>Van Name: </h3><h4 style='display: inline;'>{{oneVan.vanId}}</h4></center>
+            </li>
+            <li>
+                <center><h3 style='display: inline;'>Address Message: </h3><h4 style='display: inline;'>{{oneVan.address}}</h4></center>
+            </li>
+            <li>
+                <center><h3 style='display: inline;'>Location: </h3><h4 style='display: inline;'>[{{oneVan.location.coordinates}}]</h4></center>
+            </li>
+            <li>
+                <center><h3 style='display: inline;'>Status: </h3><h4 style='display: inline; color: rgb(163, 63, 63);'>{{oneVan.status}}</h4></center>
+            </li>
+            <li>
+                <li>
+                <center><h3 style='display: inline;'>Rating: </h3><h4 style='display: inline;'>{{oneVan.vanRate}}</h4></center>
+            </li>
+                <form method="post" action="/vendor/home/updateVanStatus">
+                    <input type="hidden" name = "status" value="{{this.status}}">
+                    <button type="submit"  class="register-btn" style="padding: 1%;">
+                    Change Status
+                    </button>
+                </form>
+            </li>
+        </ul>   
+    </section>
+    </table> 
+</section>

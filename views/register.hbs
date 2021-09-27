@@ -1,0 +1,84 @@
+<section id = "register-page">
+    <h1>Register</h1>
+            <center><h5>{{message}}</h5></center>
+            <form action="register" method="post">
+                <ul style="list-style-type:none">
+                    <li>
+                        <label for="email">Email</label>
+                        </br>
+                        <input type="text" id="email" name="email" placeholder="email">
+                    </li>
+                    <li>
+                        <label for="first_name">First Name</label>
+                        </br>
+                        <input type="text" pattern="[A-Za-z ]{1,30}" id="first_name" name="first_name" placeholder="first name">
+                    </li>
+                    <li>
+                        <h2>☼ only character and spaces </h2>
+                        <h2>☼ only 1 to 30 digits </h2>
+                    </li>
+                    <li>
+                        <label for="last_name">Last Name</label>
+                        </br>
+                        <input type="text" pattern="[A-Za-z ]{1,30}" id="last_name" name="last_name" placeholder="last name">
+                    </li>
+                    <li>
+                        <h2>☼ only character and spaces </h2>
+                        <h2>☼ only 1 to 30 digits </h2>
+                    </li>
+                    <li>
+                        <label for="password">Password</label>
+                        </br>
+                        <input type="password" pattern="[A-Za-z0-9]{5,10}" id="pwd" name="password" placeholder="********">
+                        <i class="fas fa-eye" onclick="showhide()" id="eye"></i>
+                    </li>
+                    <li>
+                        <h2>☼ only character and number </h2>
+                        <h2>☼ only 5 to 10 digits </h2>
+                        <h2>☼ can be entered</h2>
+                    </li> 
+                    <li>
+                        <label for="password">Confirm your Password</label>
+                        </br>
+                        <input type="password" id="pwd2" name="password2" placeholder="********">
+                        <i class="fas fa-eye" onclick="showhide2()" id="eye2"></i>
+                    
+                    </li>
+                    <br>
+                    <li>
+                        <button class="register-btn"><a href="/customer" class="a-register">Cancel</a></button>
+                        &nbsp;&nbsp;
+                        <button type="submit" class="register-btn"> Confirm</button>
+
+                    </li>
+                </ul>
+            </form>
+            <script>
+                        var eye = document.getElementById("eye");
+                        var pwd = document.getElementById("pwd");
+
+                        function showhide(){
+
+                                if (pwd.type == "password") {
+                                    pwd.type = "text";
+                                        eye.className='fas fa-eye-slash'
+                                }else {
+                                    pwd.type = "password";
+                                    eye.className='fas fa-eye'
+                                }
+                        }
+                        var eye2 = document.getElementById("eye2");
+                        var pwd2 = document.getElementById("pwd2");
+                        function showhide2(){
+
+                                if (pwd2.type == "password") {
+                                    pwd2.type = "text";
+                                        eye2.className='fas fa-eye-slash'
+                                }else {
+                                    pwd2.type = "password";
+                                    eye2.className='fas fa-eye'
+                                }
+                        }
+            </script>
+
+</section>

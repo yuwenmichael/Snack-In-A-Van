@@ -1,0 +1,59 @@
+<section>
+    <h1>Login successfully!</h1>
+    <form action="send_location" method="post" name="location_send">
+        <table style="margin: auto; border-spacing: 10px">
+            <tr>
+                <td>Enter your address message:</td>
+                <td>
+                    <input style="height:26px;font-size:14pt;" type="text" pattern="[A-Za-z0-9 _,;-]{1,100}" id="van_location" name="van_location" placeholder="Location">
+                </td>
+            </tr>
+            <tr><td><input type="hidden" name = "longitude" id = "longitude" value=""></td></tr>
+            <tr><td><input type="hidden" name = "latitude" id = "latitude" value=""></td></tr>
+            <tr>
+                <td colspan="2"><center><button id="find-location" class="register-btn" onclick="getLocation()">Find my Location</button></center></td>
+            </tr>
+            <tr><td colspan="2" id = "waiting"></td></tr>
+            <tr>
+                <td colspan="2"><center><button type="submit" id="submit-location" class="register-btn" onclick="return validation()">Confirm</button></center></td>
+            </tr>
+        </table>
+    </form>
+</section>
+<script>
+    var longitude = document.getElementById("longitude");
+    var latitude = document.getElementById("latitude");
+    var submitLocation = document.getElementById('submit-location');
+    var findLocation = document.getElementById('find-location');
+    var waiting = document.getElementById("waiting");
+    
+    submitLocation.style.display = 'none'; 
+    document.getElementById('find-location').addEventListener('click', showBtn); 
+
+    function showBtn(e) { 
+        findLocation.style.display = 'none'
+        waiting.innerHTML = "Please wait to get your location"
+
+        e.preventDefault(); 
+    }
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } 
+    }
+
+    function showPosition(position) {
+        waiting.style.display = 'none';
+        submitLocation.style.display = 'block'; 
+        longitude.value =  position.coords.longitude;
+        latitude.value = position.coords.latitude;
+    }
+    function validation() {
+      if (document.forms['location_send']['van_location'].value === "") {
+        alert("Please enter the quantity.");
+        return false;
+      }
+      return true;
+    }
+</script>

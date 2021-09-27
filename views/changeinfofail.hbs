@@ -1,0 +1,42 @@
+<section id = "register-page">
+    <h1>change my detail</h1>
+    <center><h5>{{message}}</h5></center>
+            <form action="changeinfo" method="post">
+                <ul style="list-style-type:none">
+                    <li>
+                        <label for="first_name">First Name</label>
+                        </br>
+                        <input type="text" id="first_name" name="first_name" placeholder="first name">
+                    </li>
+                    
+                    <li>
+                        <label for="last_name">Last Name</label>
+                        </br>
+                        <input type="text" id="last_name" name="last_name" placeholder="last name">
+                    </li>
+                    <li>
+                        <label for="password">Password</label>
+                        </br>
+                        <input type="password" pattern="[A-Za-z0-9]{5,10}" id="password" name="password" placeholder="********">
+                    </li>
+                    <li>
+                        <h2>☼ only character and number </h2>
+                        <h2>☼ only 5 to 10 digits </h2>
+                        <h2>☼ can be entered</h2>
+                    </li>   
+                    <li>
+                        <label for="password">Confirm your Password</label>
+                        </br>
+                        <input type="password" id="password2" name="password2" placeholder="********">
+                    </li>
+                    
+                    </br>
+                    <li>
+                        <button class="register-btn"><a href="/customer/getinfo" class="a-register">Cancel</a></button>
+                        &nbsp;&nbsp;
+                        <button type="submit" class="register-btn"> Confirm</button>
+                    </li>
+                </ul>
+            </form>
+
+</section>

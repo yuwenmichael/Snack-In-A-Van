@@ -1,0 +1,78 @@
+<section id = "shopping-cart">
+    <h1 style="text-align: left; ">Shopping Cart</h1>
+    <h1 style="text-align: left;"> {{thiscustomer.firstName}}'s order summary:</h1>
+    <p style="color: rgb(163, 63, 63);"> Set quantity to 0 if you want to remove foods.</p>
+    <ul>
+        <li>  
+            <p>Name</p>
+            <p>Unit Price</p>   
+            <p>quantity</p>   
+            <p>Action</p>      
+        </li>
+        {{#each cartFood}}
+         <li>
+            <p>
+                {{this.name}}
+            </p>
+            <p>
+                ${{this.price}}
+            </p>
+
+            <p class="food_quantity">
+                {{this.quantity}}
+            </p>
+            
+            <p class="edit">
+                <button class="register-btn" onclick="return edit('{{@index}}')">Edit</button>
+            </p>
+            <form  method="post" action="/customer/shopping-cart"  class="form_quantity">
+                <input type="hidden" name = "item_id" value="{{this._id}}">
+                <input  style="width: 25%;" id = "input_quantity" value="{{this.quantity}}" type="number" name="quantity" min="0" oninput="validity.valid||(value='');">
+                <button class="register-btn" type="submit" onclick="return confirm('{{@index}}')">Confirm</button>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+    <p style="text-align: right;">Total price: ${{total_price}}</p>
+    <form method="post" action="/customer/newOrders">
+        <input type="submit" value="Place Order" style="color: #EEEEEE" class="register-btn" onclick="return allIsConfirm()">
+    </form>
+
+    <script>
+        function allIsConfirm(){
+            var edits = document.getElementsByClassName("edit")
+            for(var i = 0; i < edits.length; i++){
+                if(edits[i].style.display === 'none'){
+                    alert("Please confirm your edition for your changed quantity")
+                    return false
+                }
+            }
+            return confirm('Are you sure you want to place your order?');
+        }
+
+        function edit(number){
+            var food_quantity = document.getElementsByClassName("food_quantity")[Number(number)]
+            var form_quantity = document.getElementsByClassName("form_quantity")[Number(number)]
+            var edit = document.getElementsByClassName("edit")[Number(number)]
+            var edits = document.getElementsByClassName("edit")
+            for(var i = 0; i < edits.length; i++){
+                // there are other form being displayed, i.e. confirm button exits
+                if(edits[i].style.display === 'none' ){
+                    alert('Please confirm your edition for your changed quantity first.')
+                    return false
+                }
+            }
+            form_quantity.style.display = 'flex'
+            food_quantity.style.display = 'none'
+            edit.style.display = 'none'
+        }
+
+        function confirm(number){
+        // check if the quantity is not empty
+        if (document.getElementsByClassName("form_quantity")[Number(number)]['quantity'].value === "") {
+            alert("Please enter the quantity.");
+            return false;
+            }
+        }
+    </script>
+</section>

@@ -1,0 +1,74 @@
+<ul style="list-style-type:none; padding-left: 0;">
+
+    <li><h3>Van ID: </h3><h1>{{thisorder.vanId}}</h1></li>
+    <li><h3>Order time: </h3><h1>{{thisorder.time}}</h1></li>
+    <li><h3>Click the star below to rate this order</h3></li>
+
+	
+		
+	<li style="height: 1%;"><center><i class="fas fa-star" onclick="one()" id="star1"></i>
+	<i class="fas fa-star" onclick="two()" id="star2"></i>
+	<i class="fas fa-star" onclick="three()" id="star3" ></i>
+	<i class="fas fa-star" onclick="four()" id="star4"></i>
+	<i class="far fa-star" onclick="five()" id="star5"></i></center></li>
+	<li>
+		<br>
+		<center>
+		<form action="rating" method="post" >
+		<button class="register-btn"><a href="/customer" class="a-register">Cancel</a></button>
+		&nbsp;&nbsp;
+		<input type="hidden" name="rating" id="rating" value="4">
+		<button type="submit" class="register-btn"> Confirm</button></center>
+		</form>
+    </li>
+	
+</ul>
+
+<script>
+	var star1 = document.getElementById("star1");
+	var star2 = document.getElementById("star2");
+	var star3 = document.getElementById("star3");
+	var star4 = document.getElementById("star4");
+	var star5 = document.getElementById("star5");
+    var result= document.getElementById("rating");
+	function one(){
+		star1.className='fas fa-star'
+		star2.className='far fa-star'
+		star3.className='far fa-star'
+		star4.className='far fa-star'
+		star5.className='far fa-star'
+		result.setAttribute('value', "1")
+	}
+	function two(){
+		star1.className='fas fa-star'
+		star2.className='fas fa-star'
+		star3.className='far fa-star'
+		star4.className='far fa-star'
+		star5.className='far fa-star'
+		result.setAttribute('value', "2")
+	}
+	function three(){
+		star1.className='fas fa-star'
+		star2.className='fas fa-star'
+		star3.className='fas fa-star'
+		star4.className='far fa-star'
+		star5.className='far fa-star'
+		result.setAttribute('value', "3")
+	}
+	function four(){
+		star1.className='fas fa-star'
+		star2.className='fas fa-star'
+		star3.className='fas fa-star'
+		star4.className='fas fa-star'
+		star5.className='far fa-star'
+		result.setAttribute('value', "4")
+	}
+	function five(){
+		star1.className='fas fa-star'
+		star2.className='fas fa-star'
+		star3.className='fas fa-star'
+		star4.className='fas fa-star'
+		star5.className='fas fa-star'
+		result.setAttribute('value', "5")
+	}
+</script>

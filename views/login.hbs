@@ -1,0 +1,43 @@
+<section id = "login-page">
+   <div>
+       <center><h5>{{message}}</h5></center>
+        <form action="login" method="post" >
+            <ul style="list-style-type:none">
+                <li>
+                    <label for="email"> Email</label>
+                    </br>
+                    <input type="text" id="email" name="email" placeholder="Email">
+                </li>
+                <br>
+                <li>
+                    <label for="password">Password</label>
+                    </br>
+                    <input type="password" id="pwd" name="password" placeholder="********">
+                    <i class="fas fa-eye" onclick="showhide()" id="eye"></i>
+                    <script>
+                        var eye = document.getElementById("eye");
+                        var pwd = document.getElementById("pwd");
+
+                        function showhide(){
+
+                                if (pwd.type == "password") {
+                                    pwd.type = "text";
+                                        eye.className='fas fa-eye-slash'
+                                }else {
+                                    pwd.type = "password";
+                                    eye.className='fas fa-eye'
+                                }
+                        }
+                    </script>
+                </li>
+                <br>
+                <li>
+                     <button class="register-btn"><a href="/customer" class="a-register">Cancel</a></button>
+                     &nbsp;&nbsp;
+                    
+                    <button type="submit" class="register-btn"> Confirm</button>
+                    
+                </li>
+        </form>
+    </div>
+</section>

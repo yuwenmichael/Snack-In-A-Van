@@ -1,0 +1,27 @@
+<section id="orderList">
+
+    <h1>All Orders</h1>
+    <ul>
+        {{#each oneVanOrder}}
+        <li>
+            <table>
+                <tr><td>Order ID: </td><td>{{this._id}}</td></tr>
+                <tr><td>Customer ID: </td><td>{{this.customerId}}</td></tr>
+                <tr><td>Order time: </td><td>{{this.time}}</td></tr>
+                <tr><td>Status: </td><td>{{this.status}}</td></tr>
+                <tr><td>Items: </td>
+                <td><table style="border: 3px solid #BF863F; width:85%;" align = "left">
+                    <tr style='background:rgba(214, 200, 182, 0.2);'><td>Name</td><td>Quantity</td></tr>
+                    {{#each foodnames}}
+                    <tr>
+                        <td>{{this.foodname}} </td><td>{{this.quantity}}</td>
+                    </tr>
+                    {{/each}}
+                </table></td>
+                </tr>
+                <tr><td>Total Price: </td><td>${{this.total}}</td></tr>
+            </table> 
+        </li>
+        {{/each}}
+    </ul>
+</section>

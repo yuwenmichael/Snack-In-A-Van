@@ -1,0 +1,26 @@
+<section id="orderList">
+
+    <h1>Order History</h1>
+    <ul>
+        {{#each OrderHistory}}
+        <li>
+            <table>
+                <tr><td>Order ID: </td><td style="color:#8a775e;">{{this._id}}</td></tr>
+                <tr><td>Customer ID: </td><td style="color:#8a775e;">{{this.customerId}}</td></tr>
+                <tr><td>Order time: </td><td style="color:#8a775e;">{{this.time}}</td></tr>
+                <tr><td>Items: </td>
+                <td><table style="border: 3px solid #8a775e; width:85%;" align = "left">
+                    <tr style='background:rgba(214, 200, 182, 0.2);'><td >Name</td><td>Quantity</td></tr>
+                    {{#each foodnames}}
+                    <tr>
+                        <td  style="color:#8a775e;">{{this.foodname}} </td><td  style="color:#8a775e;">{{this.quantity}}</td>
+                    </tr>
+                    {{/each}}
+                </table></td>
+                </tr>
+                <tr><td>Total Price: </td><td  style="color:#8a775e;">${{this.total}}</td></tr>
+            </table> 
+        </li>
+        {{/each}}
+    </ul>
+</section>

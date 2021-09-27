@@ -1,0 +1,715 @@
+/* central area to control type and colour */
+
+@import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+:root {
+    --text-big: 28px;
+    --text-medium: 18px;
+    --text-small: 10px;
+    --text-header: 25px;
+    --text-footer: 10px;
+    --font-body: 'Secular One', sans-serif;
+    --font-heading: 'Gayathri', sans-serif;
+    --color-dark: #848b62;
+    --color-medium: #F8B5A5;
+    --color-light: #F8EDEC;
+    --color-grey: #EEEEEE;
+    --color-background: #f8f8f6;
+    --color-brown: #a39078;
+    --color-median-yellow: #CC9E22;
+    --color-darkgrey: #D97D14;
+    --color-lightred:rgb(163, 63, 63);
+}
+
+
+/* elements that are on every page */
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-medium);
+    background-color: var(--color-background);
+    color: var(--color-dark);
+}
+
+header {
+    color: var(--color-grey);
+    background-color: var(--color-brown);
+    text-align: center;
+    font-family: var(--font-heading);
+    margin: 0;
+    font-size: var(--text-header);
+    padding-top: 12px;
+    letter-spacing: 2px;
+}
+
+footer {
+    color: var(--color-grey);
+    background-color: var(--color-brown);
+    text-align: center;
+    font-family: var(--font-heading);
+    margin: 0;
+    margin-top: 10px;
+    padding-top: 5px;
+    font-size: var(--text-footer);
+}
+
+h1 {
+    text-align: center;
+    font-size: var(--text-big);
+    color: var(--color-dark);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: var(--text-small);
+    color: var(--color-brown);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: var(--text-median);
+    text-align: center;
+    color: var(--color-brown);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+h4 {
+    font-size: var(--text-median);
+    color: var(--color-dark);
+    margin-top: 0;
+    
+    text-align: center;
+    
+}
+h5{
+    /*error massage*/
+    font-size: var(--text-median);
+    color: var(--color-lightred);
+    margin-bottom: 0;
+    margin-top: 0;
+
+}
+
+a {
+    text-decoration: none;
+    /* switch off underlining of anchors */
+}
+
+nav {
+    background-color: var(--color-background);
+    font-weight: bold;
+    font-size: 19px;
+    position: sticky;
+    top: 0;
+    padding-top: 13px;
+    letter-spacing: 2px;
+}
+
+i {
+    color: #848b62;
+}
+
+header h1 a {
+    color: var(--color-dark);
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    /* Set the hr color */
+    color: #333;
+    /* old IE */
+    background-color: #333;
+    /* Modern Browsers */
+}
+
+ul#van-list {
+    list-style-type: none;
+    /* Remove bullets */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margins */
+}
+
+.float-left {
+    height: 500px;
+    float: left;
+    overflow: scroll;
+    cursor: ns-resize;
+}
+
+.vans {
+    background-color: rgba(214, 200, 182, 0.2);
+    width: 345px;
+    border: 1px solid rgb(255, 255, 255);
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 0;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.message {
+    margin-top: 0%;
+    font-size: smaller;
+}
+
+.van-locator-title {
+    margin-bottom: 0%;
+}
+
+.nav-coloring {
+    color: #c1ac91;
+    font-family: var(--font-heading);
+}
+
+#please-wait {
+    color: chocolate;
+}
+
+
+/**************************************************************************/
+
+
+/*login page*/
+
+.register-btn {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    border-width: 2px;
+    border-style: outset;
+    background-color: #ffffff;
+    color: #3a752c;
+    font-size: var(--text-medium);
+    transition: background-color 0.3s;
+    border-radius: 12px;
+}
+
+.register-btn:hover {
+    background-color: #e7c52e;
+    transition: background-color 0.3s;
+}
+
+
+/* hyperlink is black */
+
+.a-register {
+    color: rgb(114, 37, 37);
+}
+
+#login-page input[type$=submit] {
+    display: inline-block;
+    text-align: center;
+    font-size: var(--text-medium);
+}
+
+#login-page ul {
+    padding: 0;
+}
+
+#register-page input[type$=submit] {
+    display: inline-block;
+    text-align: center;
+    font-size: var(--text-medium);
+}
+
+#register-page ul {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#register-fail input[type$=submit] {
+    display: inline-block;
+    text-align: center;
+    font-size: var(--text-medium);
+}
+
+#register-fail ul {
+    padding: 0;
+}
+
+#order-success li {
+    /* each individual food listing */
+    list-style-type: none;
+    /* switch off bullet-points */
+    display: flex;
+    flex-direction: row;
+    /* image and text are side-by-side */
+    justify-content: center;
+    /* text aligns left */
+    align-items: center;
+    /* and vertically aligns to center */
+}
+
+#login-page p {
+    text-align: center;
+}
+
+#login-register-btn {
+    align-items: center
+}
+
+
+/**************************************************************************/
+
+
+/* the Browse Foods page showing all the foods */
+
+#foodList p {
+    /* the words at the top of the page */
+    text-align: center;
+    flex-basis: 60%;
+}
+
+#foodList ul {
+    /* the list of foods */
+    padding: 0;
+}
+
+#foodList li {
+    /* each individual food listing */
+    list-style-type: none;
+    /* switch off bullet-points */
+    display: flex;
+    flex-direction: row;
+    /* image and text are side-by-side */
+    justify-content: flex-start;
+    /* text aligns left */
+    align-items: center;
+    /* and vertically aligns to center */
+}
+
+#foodList img {
+    /* images in food listings */
+    width: 140px;
+    height: 80px;
+    padding: 10px;
+    object-fit: scale-down;
+}
+
+#foodList a {
+    /* the food names */
+    color: var(--color-dark);
+}
+
+
+/**************************************************************************/
+
+
+/*orderlist*/
+
+#orderList p {
+    /* the words at the top of the page */
+    text-align: center;
+    flex-basis: 60%;
+    margin: 0%;
+}
+
+#orderList ul {
+    /* the list of foods */
+    padding: 0;
+}
+
+#orderList li {
+    /* each individual food listing */
+    list-style-type: none;
+    /* switch off bullet-points */
+    display: flex;
+    flex-direction: row;
+    /* justify-content:space-evenly;   */
+    align-items: center;
+}
+
+#orderList table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    background-color: var(--color-grey);
+    border: solid grey 1px;
+}
+
+#orderList a {
+    /* the food names */
+    color: var(--color-dark);
+}
+
+
+
+/**************************************************************************/
+
+
+/*shopping cart*/
+
+#shopping-cart img {
+    height: 100px;
+    padding-top: 1%;
+    width: 25%;
+    object-fit: scale-down;
+}
+
+#shopping-cart button:hover {
+    background-color: #CC9E22;
+}
+
+#shopping-cart p {
+    /* the words at the top of the page */
+    text-align: center;
+    flex-basis: 25%;
+}
+
+#shopping-cart ul {
+    /* the list of foods */
+    padding: 0;
+    margin-block-end: 0;
+}
+
+#shopping-cart li {
+    /* each individual food listing */
+    list-style-type: none;
+    /* switch off bullet-points */
+    display: flex;
+    flex-direction: row;
+    /* justify-content:space-evenly;   */
+    align-items: center;
+    /* and vertically aligns to center */
+}
+
+#shopping-cart form input[type$=submit]:hover {
+    background-color: #e7c52e;
+    transition: background-color 0.3s;
+}
+
+.form_quantity {
+    display: none;
+    flex-basis: 50%;
+    justify-content: space-evenly;
+}
+
+#shopping-cart-form {
+    display: flex;
+    flex-basis: 25%;
+}
+
+form {
+    /* centre the form */
+    display: flex;
+    justify-content: center;
+}
+
+form input {
+    font-size: var(--text-medium);
+}
+
+form input[type$=submit] {
+    /* submit button - note use of attribute selector */
+    background-color: var(--color-brown);
+}
+
+form span.bigScreen {
+    /* on small screens, hide some of the wording */
+    display: none;
+}
+
+
+/**************************************************************************/
+
+
+/*section for addToCart in each food*/
+
+a#addToCart {
+    /* the heart-shaped 'favourite' button */
+    font-size: 25px;
+    color: var(--color-brown);
+    background-color: lightgrey;
+    display: block;
+    text-align: center;
+}
+
+a#addToCart:hover {
+    color: var(--color-dark);
+}
+
+
+/**************************************************************************/
+
+
+/* the page showing details about an individual food */
+
+#oneFood-details {
+    /* picture, description and table */
+    display: flex;
+    flex-direction: column;
+}
+
+#oneFood-text {
+    padding: 10px;
+}
+
+#oneFood img {
+    /* centre the image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+#oneFood p {
+    /* the "description" text */
+    font-size: var(--text-small);
+    text-align: center;
+}
+
+#oneFood p#price {
+    /* the "description" text */
+    font-size: var(--text-small);
+    text-align: center;
+    font-weight: bold;
+}
+
+#oneFood table {
+    /* the table of nutritional data */
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    background-color: var(--color-grey);
+    border: solid grey 1px;
+}
+
+
+/**************************************************************************/
+
+
+/* vendor */
+
+a#updateVanStatus {
+    /* the heart-shaped 'favourite' button */
+    font-size: 25px;
+    color: var(--color-brown);
+    background-color: lightgrey;
+    display: block;
+    text-align: center;
+}
+
+a#updateVanStatus:hover {
+    color: var(--color-dark);
+}
+
+a#availability {
+    /* the heart-shaped 'favourite' button */
+    font-size: 25px;
+    color: var(--color-brown);
+    background-color: lightgrey;
+    display: block;
+    text-align: center;
+}
+
+a#availability:hover {
+    color: var(--color-dark);
+}
+
+a#updateOrderStatus {
+    /* the heart-shaped 'favourite' button */
+    font-size: 25px;
+    color: var(--color-brown);
+    background-color: lightgrey;
+    display: block;
+    text-align: center;
+}
+
+a#updateOrderStatus:hover {
+    color: var(--color-dark);
+}
+
+
+/* #shopping-cart button:hover {
+    background-color: #CC9E22;
+} */
+
+#vanDetials table {
+    /* the table of nutritional data */
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    background-color: var(--color-grey);
+    border: solid grey 1px;
+}
+
+
+/**************************************************************************/
+
+
+/* Modal (background) */
+
+.modal-background {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal (content) */
+
+.modal-foreground {
+    /* background-color: var(--color-medium); */
+    background-color: var(--color-medium);
+    text-align: center;
+    margin: 30% auto;
+    /* 15% from the top and centered */
+    width: 50%;
+}
+
+
+/**************************************************************************/
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 620px) {
+    /* for phone size */
+    h1 {
+        font-size: 20px;
+    }
+    
+    header {
+        font-size: 20px;
+    }
+    footer {
+        font-size: 12px;
+    }
+    nav {
+        background-color: var(--color-grey);
+        font-size: var(--text-medium);
+    }
+    body {
+        background-color: var(--color-grey);
+        font-size: var(--text-small);
+    }
+    #shopping-cart h1 {
+        font-size: var(--text-medium);
+    }
+    #orderList h1 {
+        font-size: var(--text-medium);
+    }
+    .menu-bar {
+        font-size: var(--text-medium);
+    }
+    #shopping-cart img {
+        height: 50px;
+    }
+    #oneFood h1 {
+        font-size: var(--text-medium);
+    }
+    #shopping-cart input[type$=submit] {
+        font-size: var(--text-small);
+    }
+    #orderList table {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: var(--color-grey);
+        border: solid grey 1px;
+    }
+    .register-btn {
+        font-size: var(--text-small);
+    }
+    input::placeholder {
+        font-size: var(--text-small);
+    }
+    #shopping-cart input[type$=number] {
+        font-size: var(--text-small);
+        width: 50%;
+    }
+    .register-page-input {
+        font-size: var(--text-small);
+    }
+    .float-left {
+        float: none;
+    }
+}
+
+@media screen and (min-width: 621px) {
+    /* for tablet-sized screens */
+    #foodList ul {
+        /* flow food list into two columns */
+        column-count: 2;
+    }
+    #orderList ul {
+        /* flow food list into two columns */
+        column-count: 1;
+    }
+    #oneFood-details {
+        flex-direction: row;
+        /* now picture and text are side-by-side */
+    }
+    #oneFood-picture,
+    #oneFood-text {
+        /* divide the sceren into two halves */
+        flex-basis: 50%;
+    }
+    #oneFood p#description {
+        /* increase font size of food description */
+        font-size: var(--text-medium);
+        text-align: left;
+    }
+    #oneFood p#price {
+        /* add a price font and bold*/
+        font-size: var(--text-medium);
+        font-weight: bold;
+        text-align: right;
+    }
+    form span.bigScreen {
+        /* spell out abbreviated words in full */
+        display: inline;
+    }
+    
+}
+
+@media screen and (min-width: 1200px) {
+    /* for big screens */
+    #foodList ul {
+        /* flow food list into three columns */
+        column-count: 3;
+    }
+    #orderList ul {
+        /* flow food list into two columns */
+        column-count: 1;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    /* for very big screens */
+    #foodList ul {
+        /* flow food list into four columns */
+        column-count: 4;
+    }
+    #orderList ul {
+        /* flow food list into two columns */
+        column-count: 1;
+    }
+}

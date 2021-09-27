@@ -1,0 +1,17 @@
+<section id="oneFood">
+
+    <h1> {{thisfood.name}} </h1>
+
+    <section id="oneFood-details">
+        <section id="oneFood-picture">
+            <img class="detailsPage" src="https://source.unsplash.com/{{thisfood.photo}}" alt="hosted by Unsplash">
+        </section>
+
+        <section id="oneFood-text">
+            <p id="description">{{thisfood.description}}</p>
+            <p id = "price">price: ${{thisfood.price}}</p>
+            <a id="addToCart" href="/customer/menu/{{thisfood.foodId}}/select_quantity">Select quantity</a>
+        </section>
+    </section>
+
+</section>

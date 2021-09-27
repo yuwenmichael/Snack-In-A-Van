@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks in a Van</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+    <link rel="manifest" href="/icon/site.webmanifest">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/c8023afafc.js" crossorigin="anonymous"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    
+</head>
+<body>
+    <header>
+            {{!-- <a href="/">Snacks in a Van <i class="fas fa-shuttle-van"></i></a>  --}}
+            SNACKS IN A VAN <i style="color: #F5F2ED;" class="fas fa-shuttle-van"></i>
+    </header>
+    <nav>
+        <section class = "menu-bar" class="nav-coloring">
+            <a href="/customer" class="nav-coloring">Map <i class="fas fa-map-marked-alt"></i></a>
+            &nbsp; | &nbsp;
+            <a href="/customer/menu" class="nav-coloring">Menu <i class="fas fa-utensils"></i></a>
+            &nbsp; | &nbsp;
+            <a href="/customer/shopping-cart" class="nav-coloring">Shopping Cart <i class="fas fa-cart-arrow-down"></i></a>
+            &nbsp; | &nbsp;
+            <a href="/customer/newOrders" class="nav-coloring">Orders <i class="fas fa-concierge-bell"></i></a>
+            &nbsp; | &nbsp;
+             <a href="/customer/getinfo" class="nav-coloring">Profile <i class="fas fa-user"></i></a>
+            <hr size="30">
+        </section>
+    </nav>
+    <main>
+        {{{body}}}
+    </main>
+    <footer>
+        INFO30005 Project-By Group WebG100
+    </footer>
+</body>
+</html>
