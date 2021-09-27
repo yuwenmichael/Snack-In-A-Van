@@ -23,13 +23,13 @@
 
 ## Team Members
 
-| Name | Student ID| Task | State |
-| :---         |     :---:      |     :---:      |          ---: |
-| Yu-Wen Michael Zhang  |1089117| shopping cart related tasks, order discount   |  Done |
-| Ming Zhang   |1068302| login and register, rating      |  Done |
-| Yifei Wang    |1001686| vendor location and map functions   |  Done |
-| Wanting Zhang    |1080915| vendor app UI and README    |  Done |
-| Wanxuan Zhang    |1079686| vendor app UI and testing    |  Done |
+| Name | Task | State |
+| :---         |      :---:      |          ---: |
+| Yu-Wen Michael Zhang  | shopping cart related tasks, order discount   |  Done |
+| Ming Zhang   | login and register, rating      |  Done |
+| Yifei Wang    | vendor location and map functions   |  Done |
+| Wanting Zhang    | vendor app UI and README    |  Done |
+| Wanxuan Zhang    | vendor app UI and testing    |  Done |
 
 ## General info
 This is project is about creating an vendor app and customer app from scratch. 
