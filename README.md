@@ -54,10 +54,7 @@ For example, Cappuccino has photo String: **6o2Dk5Op8VI**, if you want to view t
 
 
 ## How to access our database
-Our database name is: **`INFO30005`**<br />
-Here is one of the username and password that allow you to access our database:<br />
-**`MONGO_USERNAME=Michael`**<br />
-**`MONGO_PASSWORD=1234`**<br />
+email me for permission: `zywmichael2000@gmail.com`<br />
 Also, ther is an additional thing that you may need to add in .env file: </br>
 **`PASSPORT_KEY=info30005secretkey`**</br>
 This PASSPORT_KEY will allow you to use passport.js while you try to run our code.
